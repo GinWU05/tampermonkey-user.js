@@ -12,64 +12,87 @@ A collection of userscripts that make the web a little less annoying — smoothe
 
 ### 📖 Reading & Content
 
-**沉浸阅读（for微信读书）**
-微信读书沉浸阅读：隐藏干扰 UI、调整阅读宽度、自动翻页、自定义主题、AI 问书全屏模式。
-适用 weread.qq.com/web/reader/*
-[安装](https://greasyfork.org/en/scripts/536846) · [文档](weread-immersive/README.md)
+**Immersive Reading (for WeRead)**
 
-**微信读书 深色主题**
-移除 body 上的 `wr_whiteTheme` class，改善微信读书深色模式。
-适用 weread.qq.com/*
+Hides noise, adjusts reading width, auto-scroll, custom themes, and full-screen AI book Q&A for WeRead.
+
+Runs on weread.qq.com/web/reader/*
+
+[Install](https://greasyfork.org/en/scripts/536846) · [Docs](weread-immersive/README.md)
+
+**WeRead Dark Theme Fix**
+
+Removes the `wr_whiteTheme` class from body, improving WeRead's dark mode behavior.
+
+Runs on weread.qq.com/*
 
 ---
 
 ### 🔗 Share & Copy
 
 **share-tweet-copy**
+
 Copy tweets in a cleaner, quote-ready format — preserves line breaks and author handle, plays nice with Immersive Translate.
-适用 twitter.com · x.com
-[安装](https://greasyfork.org/scripts/482936) · [文档](share-tweet-copy/README.md)
+
+Runs on twitter.com / x.com
+
+[Install](https://greasyfork.org/scripts/482936) · [Docs](share-tweet-copy/README.md)
 
 **inoreader-open-link**
+
 Helps open original article links in Inoreader's web interface.
-适用 inoreader.com
+
+Runs on inoreader.com
 
 ---
 
 ### ▶️ Auto-Play & Automation
 
-**刷课脚本（chaoxing-mooc-auto-player）**
-超星 MOOC 视频播放完毕后自动切换到下一节。
-适用 mooc1.chaoxing.com
-[文档](chaoxing-mooc-auto-player/README.md)
+**Chaoxing MOOC Auto Player**
+
+Auto-advances to the next section when a Chaoxing MOOC video finishes playing.
+
+Runs on mooc1.chaoxing.com
+
+[Docs](chaoxing-mooc-auto-player/README.md)
 
 **Hongguoguo Auto Next**
-红果视频自动下一集，并尝试自动全屏。
-适用 hongguoguo.tv
+
+Auto-advances to the next episode and attempts auto-fullscreen on Hongguoguo.
+
+Runs on hongguoguo.tv
 
 ---
 
 ### 🛠️ Developer Tools
 
 **decode-swagger-url-and-set-title**
-Swagger UI 页面的 URL 编码标题解码，并设置为可读的 `document.title`。
-适用 *swagger*/index.html?urls.primaryName=*
+
+Decodes URL-encoded titles for Swagger UI pages and sets a readable `document.title`.
+
+Runs on */swagger/index.html?urls.primaryName=*
 
 **AnyRouter Model Checker**
-从已登录的浏览器会话检查 AnyRouter 模型可用性。
-适用 anyrouter.top
+
+Checks AnyRouter model availability from a logged-in browser session.
+
+Runs on anyrouter.top
 
 ---
 
 ### 🎨 UI & Themes
 
 **Sumbuddy Dark**
-为 Sumbuddy 网站添加暗色模式支持，与 Dark Reader 扩展完全兼容。
-适用 所有站点（⚠️ 按需启用）
+
+Dark mode support for Sumbuddy, fully compatible with Dark Reader. Wide match — enable only when needed.
+
+Runs on all sites (⚠️ toggle manually)
 
 **Hermchats Dialog Cleaner**
-清理 Hermchats 上的弹窗对话框。
-适用 hermchats.com
+
+Cleans up popup dialogs on Hermchats.
+
+Runs on hermchats.com
 
 ---
 
@@ -100,18 +123,18 @@ For local debugging, see `_utils/dev.local.js` and `dev.sh`.
 
 ```
 tampermonkey-user.js/
-├── weread-immersive/        # WeRead immersive reading
-├── weread-dark-theme/      # WeRead dark mode fix
-├── share-tweet-copy/       # Tweet copy formatter
-├── chaoxing-mooc-auto-player/  # Chaoxing auto-advance
-├── inoreader-open-link/    # Inoreader link helper
+├── weread-immersive/            # WeRead immersive reading
+├── weread-dark-theme/           # WeRead dark mode fix
+├── share-tweet-copy/            # Tweet copy formatter
+├── chaoxing-mooc-auto-player/   # Chaoxing auto-advance
+├── inoreader-open-link/         # Inoreader link helper
 ├── decode-swagger-url-and-set-title/  # Swagger title decoder
-├── hongguoguo-auto-next/   # Hongguoguo auto-next
-├── hermchats-dialog-cleaner/  # Hermchats cleanup
-├── sumbuddy-dark/          # Sumbuddy dark mode
-├── anyrouter-model-checker/   # AnyRouter model checker
-├── _utils/                # Dev helpers
-└── docs/                  # Shared assets
+├── hongguoguo-auto-next/        # Hongguoguo auto-next
+├── hermchats-dialog-cleaner/    # Hermchats cleanup
+├── sumbuddy-dark/               # Sumbuddy dark mode
+├── anyrouter-model-checker/     # AnyRouter model checker
+├── _utils/                      # Dev helpers
+└── docs/                        # Shared assets
 ```
 
 ---
@@ -119,6 +142,7 @@ tampermonkey-user.js/
 ## Compatibility
 
 **Managers:** Tampermonkey · Violentmonkey · ScriptCat
+
 **Browsers:** Chrome · Edge · Firefox · Safari (with compatible manager) · Android browsers with extension support
 
 Scripts using GM APIs may behave slightly differently across managers. Test on your setup if you rely on advanced features.
@@ -127,9 +151,7 @@ Scripts using GM APIs may behave slightly differently across managers. Test on y
 
 ## Contributing
 
-Bug reports and ideas — open an issue.
-PRs welcome; keep changes scoped to one script per PR.
-New scripts should include: `@name`, `@match`, a basic README, and a screenshot if applicable.
+Bug reports and ideas — open an issue. PRs welcome; keep changes scoped to one script per PR. New scripts should include: `@name`, `@match`, a basic README, and a screenshot if applicable.
 
 ---
 
