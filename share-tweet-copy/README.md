@@ -6,7 +6,7 @@ Share Tweet Copy is a Tampermonkey userscript that allows users to copy the text
 ## About
 
 The doc source link is [here](https://github.com/screw-hand/tampermonkey-user.js/blob/main/share-tweet-copy/README.md),
-async with [greasyfork additional info](https://greasyfork.org/en/scripts/482936-share-tweet-copy#additional-info).
+async with [greasyfork additional info](https://greasyfork.org/scripts/482936#additional-info).
 
 ## Why?
 
@@ -42,7 +42,7 @@ https://twitter.com/sama/status/1779517913654808676
 
 ## Installation
 1. If you haven't already, install the [Tampermonkey](https://www.tampermonkey.net/) extension for your browser.
-2. Click [here to install Share Tweet Copy](https://greasyfork.org/scripts/482936-share-tweet-copy) or visit the Greasy Fork page and click "Install this script".
+2. Click [here to install Share Tweet Copy](https://greasyfork.org/scripts/482936) or visit the Greasy Fork page and click "Install this script".
 3. Once installed, the script will automatically work on Twitter's website.
 
 ## Usage

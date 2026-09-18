@@ -2,6 +2,8 @@
 
 Hi! Thank you for contributing.
 
+Repository-wide rules (header template, versioning, `npm test`, publishing) live in the root [CONTRIBUTING.md](../CONTRIBUTING.md). This file only covers what is specific to this script.
+
 ## Pull Request
 1. fork this repository.
 2. git clone your fork repository.
@@ -17,13 +19,13 @@ And We don't use the online script. I wish use the local script.
 
 **If you have been install this tampermonkey script, disable that. Don't use the online script and local script in the same time.**
 
-1. **Allow access to file URLs**: Make Tampermonkey can access file, [link](https://www.tampermonkey.net/faq.php#Q204).
-2. **Config script path**: Update the `dev.user.js`, `@require` value is the `script.user.js` file path in your disk.
-3. **Use dev script**: import the `dev.user.js` to tampermonkey, and update `script.user.js`.
+1. **Start the local server**: from the repo root run `sh dev.sh`. It serves the repo at `http://localhost:3000`.
+2. **Use dev script**: import `dev.user.js` into Tampermonkey. Its `@require` already points at `http://localhost:3000/share-tweet-copy/script.user.js`, so every page reload pulls your current `script.user.js`. No special Tampermonkey permission is needed for `http://localhost:3000`; only the commented `file:///` alternative requires file URL access (see [FAQ Q204](https://www.tampermonkey.net/faq.php#Q204)).
+3. **Tweak the dev environment**: `dev.user.js` sets `ENV_MODE` and `ENV_USER_TEMPLATE` via `GM_setValue`; edit its body to try other copy templates.
 4. **check is working**: browse the match link, use devtool's control panel to debug the script.
 5. **happy coding**: ...
 
-[link](https://www.tampermonkey.net/faq.php#Q204)
+Alternative `@require` sources (local `file:///` path, or the published GreasyFork URL) are kept as comments inside `dev.user.js`; swap one into the header if you cannot run the local server.
 
 ## Advanced
 

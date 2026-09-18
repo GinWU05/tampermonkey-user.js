@@ -1,3 +1,5 @@
+> 注：本文是历史开发 prompt。其中「元信息」一节已被根目录 CONTRIBUTING.md 的头部模板取代，以 CONTRIBUTING.md 为准。
+
 # 开发计划 Prompt
 
 你是 Codex CLI 开发助手，请按以下说明在本仓库新增一个 Tampermonkey 脚本。参考 `sumbuddy-dark/script.user.js` 的元信息风格与字段，完成同结构的脚本头部与实现。

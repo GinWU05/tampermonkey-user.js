@@ -2,7 +2,7 @@
 
 # 安装
 
-[greasyfork链接](https://greasyfork.org/en/scripts/536846-%E6%B2%89%E6%B5%B8%E9%98%85%E8%AF%BB-for%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6)
+[greasyfork链接](https://greasyfork.org/scripts/536846)
 
 # 为什么？
 
