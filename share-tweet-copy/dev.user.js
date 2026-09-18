@@ -1,25 +1,26 @@
 // ==UserScript==
-// @name         DEV share-tweet-copy
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Try to take over the world!
-// @author       You
-// @match        https://twitter.com/*
-// @match        https://x.com/*
-// @icon         https://abs.twimg.com/favicons/twitter.3.ico
-// @require      https://update.greasyfork.org/scripts/482936/share-tweet-copy.user.js
-// @grant        GM_setValue
-// @grant        GM_getValue
+// @name              DEV Share Tweet Copy
+// @namespace         https://screw-hand.com/
+// @version           0.0.0
+// @description       Local dev loader for share-tweet-copy/script.user.js. Not for publishing.
+// @author            GinWU
+// @license           MIT
+// @match             https://twitter.com/*
+// @match             https://x.com/*
+// @require           http://localhost:3000/share-tweet-copy/script.user.js
+// @grant             GM_addStyle
+// @grant             GM_getValue
+// @grant             GM_setValue
 // ==/UserScript==
 
 (function() {
   'use strict';
   /**
-   * Include external JS scripts here for easy switching.
-   * Move it to the UserScript.
+   * Alternative @require sources. Swap into the header above when needed.
+   * Default is the local server started by `sh dev.sh` (localhost:3000).
    */
-  // @require      https://update.greasyfork.org/scripts/482936/share-tweet-copy.user.js
   // @require      file:///Users/wu/Documents/code/tampermonkey-user.js/share-tweet-copy/script.user.js
+  // @require      https://update.greasyfork.org/scripts/482936/script.user.js
 
   /* === */
   const USER_TEMPLATE = [
