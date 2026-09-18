@@ -1,12 +1,17 @@
 // ==UserScript==
-// @name         decode-swagger-url-and-set-title
-// @namespace    https://screw-hand.com/
-// @version      1.0
-// @description  Decode URL encoded titles for Swagger pages and set document.title
-// @author       screw-hand
-// @match        *://*/*swagger/index.html?urls.primaryName=*
-// @icon         https://static1.smartbear.co/swagger/media/assets/swagger_fav.png
-// @grant        none
+// @name              Swagger URL Title Decoder
+// @name:zh-CN        Swagger 标题解码
+// @namespace         https://screw-hand.com/
+// @version           1.0.1
+// @description       Decode URL-encoded titles for Swagger UI pages and set document.title.
+// @description:zh-CN 解码 Swagger UI 页面 URL 中经过编码的标题，并设置为 document.title。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/decode-swagger-url-and-set-title
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://static1.smartbear.co/swagger/media/assets/swagger_fav.png
+// @match             *://*/*swagger/index.html?urls.primaryName=*
+// @grant             none
 // ==/UserScript==
 
 (function() {

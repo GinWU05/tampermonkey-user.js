@@ -1,14 +1,19 @@
 // ==UserScript==
-// @name         inoreader-open-link
-// @namespace    https://screw-hand.com/
-// @version      0.11
-// @description  support inoreader web to open the link.
-// @author       screw-hand
-// @match        https://www.inoreader.com/*
-// @icon         https://www.inoreader.com/favicon.ico?v=8
-// @grant        none
-// @homepage     https://github.com/screw-hand/tampermonkey-user.js
-// @updateURL    https://github.com/screw-hand/tampermonkey-user.js/raw/main/inoreader-open-link.user.js
+// @name              Inoreader Open Link
+// @name:zh-CN        Inoreader 原文链接
+// @namespace         https://screw-hand.com/
+// @version           0.11.1
+// @description       Open the original article link from the Inoreader web app.
+// @description:zh-CN 在 Inoreader 网页版打开文章原文链接。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/inoreader-open-link
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://www.inoreader.com/favicon.ico?v=8
+// @match             https://www.inoreader.com/*
+// @grant             none
+// @downloadURL       https://update.greasyfork.org/scripts/483381/script.user.js
+// @updateURL         https://update.greasyfork.org/scripts/483381/script.meta.js
 // ==/UserScript==
 
 (function () {

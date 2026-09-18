@@ -1,13 +1,18 @@
 // ==UserScript==
-// @name         Hermchats Dialog Cleaner
-// @namespace    https://screw-hand.com/
-// @version      0.4
-// @description  Clean up all dialogs on Hermchats
-// @author       screw-hand
-// @match        https://www.hermchats.com/*
-// @icon         https://www.hermchats.com/favicon.ico
-// @grant        GM_xmlhttpRequest
-// @grant        GM_registerMenuCommand
+// @name              Hermchats Dialog Cleaner
+// @name:zh-CN        Hermchats 对话批量删除
+// @namespace         https://screw-hand.com/
+// @version           0.4.1
+// @description       Delete all chat conversations on Hermchats with one menu command.
+// @description:zh-CN 通过菜单命令一键删除 Hermchats 上的所有对话。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/hermchats-dialog-cleaner
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://www.hermchats.com/favicon.ico
+// @match             https://www.hermchats.com/*
+// @grant             GM_xmlhttpRequest
+// @grant             GM_registerMenuCommand
 // ==/UserScript==
 
 (function () {

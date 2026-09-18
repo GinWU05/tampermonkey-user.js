@@ -1,14 +1,19 @@
 // ==UserScript==
-// @name         AnyRouter Model Checker
-// @namespace    https://anyrouter.top/
-// @version      0.1.0
-// @description  Check AnyRouter model availability from the logged-in browser session.
-// @author       Gin WU + Hermes
-// @match        https://anyrouter.top/*
-// @grant        GM_getValue
-// @grant        GM_setValue
-// @grant        GM_notification
-// @run-at       document-idle
+// @name              AnyRouter Model Checker
+// @name:zh-CN        AnyRouter 模型可用性检测
+// @namespace         https://screw-hand.com/
+// @version           0.1.1
+// @description       Check AnyRouter model availability from the logged-in browser session.
+// @description:zh-CN 在已登录的浏览器会话中检测 AnyRouter 各模型的可用性。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/anyrouter-model-checker
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @match             https://anyrouter.top/*
+// @run-at            document-idle
+// @grant             GM_getValue
+// @grant             GM_setValue
+// @grant             GM_notification
 // ==/UserScript==
 
 (function () {

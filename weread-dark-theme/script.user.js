@@ -1,11 +1,17 @@
 // ==UserScript==
-// @name         微信读书 深色主题
-// @namespace    https://screw-hand.com/
-// @version      0.2
-// @description  Remove wr_whiteTheme class from body
-// @match        https://weread.qq.com/*
-// @icon         https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/appleTouchIcon/apple-touch-icon-152x152.png
-// @grant        GM_addStyle
+// @name              WeRead Dark Theme Fix
+// @name:zh-CN        微信读书深色主题修复
+// @namespace         https://screw-hand.com/
+// @version           0.2.1
+// @description       Force WeRead's dark theme class on body and darken the index page cards.
+// @description:zh-CN 强制微信读书 body 使用深色主题 class，并修正首页卡片配色。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/weread-dark-theme
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/appleTouchIcon/apple-touch-icon-152x152.png
+// @match             https://weread.qq.com/*
+// @grant             GM_addStyle
 // ==/UserScript==
 
 (function () {

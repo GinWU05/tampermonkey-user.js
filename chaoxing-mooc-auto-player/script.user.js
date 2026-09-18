@@ -1,12 +1,17 @@
 // ==UserScript==
-// @name         刷课脚本
-// @namespace    https://screw-hand.com/
-// @version      2025-03-12
-// @description  播放完自动下一节，自动播放
-// @author       screw-hand
-// @match        https://mooc1.chaoxing.com/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=chaoxing.com
-// @grant        none
+// @name              Chaoxing MOOC Auto Player
+// @name:zh-CN        超星学习通自动播放
+// @namespace         https://screw-hand.com/
+// @version           2026.9.18
+// @description       Auto-play Chaoxing MOOC videos and advance to the next section when finished.
+// @description:zh-CN 播放完自动下一节，自动播放。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/chaoxing-mooc-auto-player
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://www.google.com/s2/favicons?sz=64&domain=chaoxing.com
+// @match             https://mooc1.chaoxing.com/*
+// @grant             none
 // ==/UserScript==
 
 (function () {

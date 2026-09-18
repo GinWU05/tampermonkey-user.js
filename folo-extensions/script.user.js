@@ -1,19 +1,21 @@
 // ==UserScript==
-// @name         Folo 功能扩展
-// @name:en      Folo Extensions
-// @namespace    https://screw-hand.com/
-// @version      0.3.0
-// @description  Folo 网页版个性化扩展。当前功能：完全禁用内置阅读器——单击或 Enter 在新标签页打开原文并标记已读，J/K/↑/↓ 在列表内移动选中。
-// @description:en  Personal tweaks for the Folo web app. Current feature: fully disable the built-in reader — click or Enter opens the original in a new tab and marks it read; J/K/Up/Down move the selection.
-// @author       GinWU
-// @match        https://app.folo.is/*
-// @icon         https://app.folo.is/favicon.ico
-// @grant        GM_getValue
-// @grant        GM_setValue
-// @grant        GM_registerMenuCommand
-// @grant        unsafeWindow
-// @run-at       document-start
-// @license      MIT
+// @name              Folo Extensions
+// @name:zh-CN        Folo 功能扩展
+// @namespace         https://screw-hand.com/
+// @version           0.3.1
+// @description       Personal tweaks for the Folo web app. Current feature: fully disable the built-in reader — click or Enter opens the original in a new tab and marks it read; J/K/Up/Down move the selection.
+// @description:zh-CN Folo 网页版个性化扩展。当前功能：完全禁用内置阅读器——单击或 Enter 在新标签页打开原文并标记已读，J/K/↑/↓ 在列表内移动选中。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/folo-extensions
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://app.folo.is/favicon.ico
+// @match             https://app.folo.is/*
+// @run-at            document-start
+// @grant             GM_getValue
+// @grant             GM_setValue
+// @grant             GM_registerMenuCommand
+// @grant             unsafeWindow
 // ==/UserScript==
 
 /**

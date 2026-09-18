@@ -1,12 +1,18 @@
 // ==UserScript==
-// @name         Hongguoguo Auto Next
-// @namespace    https://screw-hand.com/
-// @version      0.1.0
-// @description  红果视频自动下一集并尝试全屏
-// @author       screw-hand
-// @icon         https://www.hongguoguo.tv/template/Naifei/static/img/favicon.png
-// @match        https://www.hongguoguo.tv/vod/play/id/*/sid/1/nid/*.html
-// @run-at       document-start
+// @name              Hongguoguo Auto Next
+// @name:zh-CN        红果视频自动下一集
+// @namespace         https://screw-hand.com/
+// @version           0.1.1
+// @description       Auto-advance to the next episode on Hongguoguo and try to go fullscreen.
+// @description:zh-CN 红果视频自动下一集并尝试全屏。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/hongguoguo-auto-next
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://www.hongguoguo.tv/template/Naifei/static/img/favicon.png
+// @match             https://www.hongguoguo.tv/vod/play/id/*/sid/1/nid/*.html
+// @run-at            document-start
+// @grant             none
 // ==/UserScript==
 
 (() => {

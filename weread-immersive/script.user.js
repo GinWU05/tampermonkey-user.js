@@ -1,15 +1,21 @@
 // ==UserScript==
-// @name         沉浸阅读（for微信读书）
-// @version      0.5.0
-// @author       GinWU
-// @contributor  !Sylas;SimonDW;Li_MIxdown;hubzy;xvusrmqj;LossJ;JackieZheng;das2m;harmonyLife;yehuda
-// @namespace    https://screw-hand.com/
-// @description  微信读书的阅读字体修改为苍耳今楷，加减宽度，鼠标离开显示隐藏导航栏、功能栏、滚动条，多档滚动速度，自动翻页，自定义宽度和主题（与原生深/浅主题互斥），仅适配weread.qq.com站点
-// @match        https://weread.qq.com/web/reader/*
-// @icon         https://weread.qq.com/favicon.ico
-// @grant        GM_addStyle
-// @grant        unsafeWindow
-// @license      MIT
+// @name              Immersive Reading (for WeRead)
+// @name:zh-CN        沉浸阅读（for微信读书）
+// @namespace         https://screw-hand.com/
+// @version           0.5.1
+// @description       Immersive reading for WeRead: custom reading font, adjustable width, auto-hide navigation/toolbar/scrollbar on mouse leave, multi-speed auto-scroll, auto page turn, custom width and themes (exclusive with native dark/light themes). weread.qq.com only.
+// @description:zh-CN 自定义微信读书阅读字体，加减宽度，鼠标离开显示隐藏导航栏、功能栏、滚动条，多档滚动速度，自动翻页，自定义宽度和主题（与原生深/浅主题互斥），仅适配weread.qq.com站点
+// @author            GinWU
+// @contributor       !Sylas;SimonDW;Li_MIxdown;hubzy;xvusrmqj;LossJ;JackieZheng;das2m;harmonyLife;yehuda
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/weread-immersive
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://weread.qq.com/favicon.ico
+// @match             https://weread.qq.com/web/reader/*
+// @grant             GM_addStyle
+// @grant             unsafeWindow
+// @downloadURL       https://update.greasyfork.org/scripts/536846/script.user.js
+// @updateURL         https://update.greasyfork.org/scripts/536846/script.meta.js
 // ==/UserScript==
 
 /**

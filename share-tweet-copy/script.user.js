@@ -1,18 +1,21 @@
 // ==UserScript==
-// @name         share-tweet-copy
-// @namespace    https://screw-hand.com/
-// @version      0.4.6
-// @description  support twitter to copy, easy to share.
-// @author       screw-hand
-// @match        https://twitter.com/*
-// @match        https://x.com/*
-// @icon         https://abs.twimg.com/favicons/twitter.3.ico
-// @grant        GM_addStyle
-// @grant        GM_getValue
-// @homepage     https://github.com/screw-hand/tampermonkey-user.js
-// @supportURL   https://github.com/screw-hand/tampermonkey-user.js/issues/new
-// @downloadURL https://update.greasyfork.org/scripts/482936/share-tweet-copy.user.js
-// @updateURL https://update.greasyfork.org/scripts/482936/share-tweet-copy.meta.js
+// @name              Share Tweet Copy
+// @name:zh-CN        推文复制分享
+// @namespace         https://screw-hand.com/
+// @version           0.4.7
+// @description       Copy tweets on Twitter/X in a clean, quote-ready format for easy sharing.
+// @description:zh-CN 一键复制 Twitter/X 推文为整洁、可直接引用的格式，方便分享。
+// @author            GinWU
+// @license           MIT
+// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/share-tweet-copy
+// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @icon              https://abs.twimg.com/favicons/twitter.3.ico
+// @match             https://twitter.com/*
+// @match             https://x.com/*
+// @grant             GM_addStyle
+// @grant             GM_getValue
+// @downloadURL       https://update.greasyfork.org/scripts/482936/script.user.js
+// @updateURL         https://update.greasyfork.org/scripts/482936/script.meta.js
 // ==/UserScript==
 
 (function () {
