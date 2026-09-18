@@ -26,6 +26,14 @@
 
 适用 weread.qq.com/*
 
+**Folo 功能扩展**
+
+Folo 网页版个性化扩展。当前功能：完全禁用内置阅读器——单击或 Enter 在新标签页打开原文并标记已读，J/K/↑/↓ 在列表内移动选中。
+
+适用 app.folo.is
+
+[文档](folo-extensions/README.md)
+
 ---
 
 ### 🔗 分享 & 复制
@@ -125,6 +133,7 @@ Swagger UI 页面的 URL 编码标题解码，并设置为可读的 `document.ti
 tampermonkey-user.js/
 ├── weread-immersive/            # 微信读书沉浸阅读
 ├── weread-dark-theme/           # 微信读书深色主题修复
+├── folo-extensions/             # Folo 网页版功能扩展
 ├── share-tweet-copy/            # 推文复制格式化
 ├── chaoxing-mooc-auto-player/   # 超星 MOOC 自动播放
 ├── inoreader-open-link/         # Inoreader 原文链接

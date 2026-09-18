@@ -26,6 +26,14 @@ Removes the `wr_whiteTheme` class from body, improving WeRead's dark mode behavi
 
 Runs on weread.qq.com/*
 
+**Folo Extensions**
+
+Personal tweaks for the Folo web app. Currently: fully disables the built-in reader — click or Enter opens the original in a new tab and marks it read; J/K/↑/↓ move the selection.
+
+Runs on app.folo.is
+
+[Docs](folo-extensions/README.md)
+
 ---
 
 ### 🔗 Share & Copy
@@ -125,6 +133,7 @@ For local debugging, see `_utils/dev.local.js` and `dev.sh`.
 tampermonkey-user.js/
 ├── weread-immersive/            # WeRead immersive reading
 ├── weread-dark-theme/           # WeRead dark mode fix
+├── folo-extensions/             # Folo web app tweaks
 ├── share-tweet-copy/            # Tweet copy formatter
 ├── chaoxing-mooc-auto-player/   # Chaoxing auto-advance
 ├── inoreader-open-link/         # Inoreader link helper
