@@ -1,13 +1,13 @@
 {
   "name": "tampermonkey-user.js",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A collection of Tampermonkey userscripts by GinWU.",
+  "private": true,
   "type": "module",
   "scripts": {
-    "share-tweet-copy:test": "node ./share-tweet-copy/test/index.js"
+    "test": "node _utils/check-metadata.mjs"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "GinWU",
+  "license": "MIT"
 }
