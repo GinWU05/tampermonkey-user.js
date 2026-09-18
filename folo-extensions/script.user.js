@@ -2,7 +2,7 @@
 // @name              Folo Extensions
 // @name:zh-CN        Folo 功能扩展
 // @namespace         https://screw-hand.com/
-// @version           0.3.1
+// @version           0.3.2
 // @description       Personal tweaks for the Folo web app. Current feature: fully disable the built-in reader — click or Enter opens the original in a new tab and marks it read; J/K/Up/Down move the selection.
 // @description:zh-CN Folo 网页版个性化扩展。当前功能：完全禁用内置阅读器——单击或 Enter 在新标签页打开原文并标记已读，J/K/↑/↓ 在列表内移动选中。
 // @author            GinWU
@@ -16,6 +16,8 @@
 // @grant             GM_setValue
 // @grant             GM_registerMenuCommand
 // @grant             unsafeWindow
+// @downloadURL       https://update.greasyfork.org/scripts/596364/script.user.js
+// @updateURL         https://update.greasyfork.org/scripts/596364/script.meta.js
 // ==/UserScript==
 
 /**

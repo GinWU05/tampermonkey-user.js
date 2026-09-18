@@ -120,9 +120,9 @@ Install links always use the locale-free form `https://greasyfork.org/scripts/<i
 | share-tweet-copy | Published [#482936](https://greasyfork.org/scripts/482936) | Webhook sync |
 | inoreader-open-link | Published [#483381](https://greasyfork.org/scripts/483381) | Webhook sync |
 | weread-immersive | Published [#536846](https://greasyfork.org/scripts/536846) | Webhook sync |
-| folo-extensions | To publish | General-purpose; awaiting first manual publish |
-| weread-dark-theme | To publish | General-purpose; awaiting first manual publish |
-| decode-swagger-url-and-set-title | To publish | General-purpose; awaiting first manual publish |
+| folo-extensions | Published [#596364](https://greasyfork.org/scripts/596364) | Webhook sync |
+| weread-dark-theme | Published [#596365](https://greasyfork.org/scripts/596365) | Webhook sync |
+| decode-swagger-url-and-set-title | Published [#596366](https://greasyfork.org/scripts/596366) | Webhook sync |
 | sumbuddy-dark | Not publishing | Matches `*://*/*` (every site); meant to be toggled manually |
 | hongguoguo-auto-next | Not publishing | Personal use, niche site |
 | hermchats-dialog-cleaner | Not publishing | Personal use, niche site |

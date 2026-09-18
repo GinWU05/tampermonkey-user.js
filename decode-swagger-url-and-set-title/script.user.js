@@ -2,7 +2,7 @@
 // @name              Swagger URL Title Decoder
 // @name:zh-CN        Swagger 标题解码
 // @namespace         https://screw-hand.com/
-// @version           1.0.1
+// @version           1.0.2
 // @description       Decode URL-encoded titles for Swagger UI pages and set document.title.
 // @description:zh-CN 解码 Swagger UI 页面 URL 中经过编码的标题，并设置为 document.title。
 // @author            GinWU
@@ -12,6 +12,8 @@
 // @icon              https://static1.smartbear.co/swagger/media/assets/swagger_fav.png
 // @match             *://*/*swagger/index.html?urls.primaryName=*
 // @grant             none
+// @downloadURL       https://update.greasyfork.org/scripts/596366/script.user.js
+// @updateURL         https://update.greasyfork.org/scripts/596366/script.meta.js
 // ==/UserScript==
 
 (function() {

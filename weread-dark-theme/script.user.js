@@ -2,7 +2,7 @@
 // @name              WeRead Dark Theme Fix
 // @name:zh-CN        微信读书深色主题修复
 // @namespace         https://screw-hand.com/
-// @version           0.2.1
+// @version           0.2.2
 // @description       Force WeRead's dark theme class on body and darken the index page cards.
 // @description:zh-CN 强制微信读书 body 使用深色主题 class，并修正首页卡片配色。
 // @author            GinWU
@@ -12,6 +12,8 @@
 // @icon              https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/appleTouchIcon/apple-touch-icon-152x152.png
 // @match             https://weread.qq.com/*
 // @grant             GM_addStyle
+// @downloadURL       https://update.greasyfork.org/scripts/596365/script.user.js
+// @updateURL         https://update.greasyfork.org/scripts/596365/script.meta.js
 // ==/UserScript==
 
 (function () {

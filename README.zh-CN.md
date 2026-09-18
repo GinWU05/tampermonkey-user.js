@@ -26,11 +26,15 @@
 
 适用 weread.qq.com/*
 
+[安装](https://greasyfork.org/scripts/596365)
+
 **Folo 功能扩展**
 
 Folo 网页版个性化扩展。当前功能：完全禁用内置阅读器——单击或 Enter 在新标签页打开原文并标记已读，J/K/↑/↓ 在列表内移动选中。
 
 适用 app.folo.is
+
+[安装](https://greasyfork.org/scripts/596364) · [文档](folo-extensions/README.md)
 
 [文档](folo-extensions/README.md)
 
@@ -82,6 +86,8 @@ Swagger UI 页面的 URL 编码标题解码，并设置为可读的 `document.ti
 
 适用 `*://*/*swagger/index.html?urls.primaryName=*`
 
+[安装](https://greasyfork.org/scripts/596366)
+
 **AnyRouter 模型可用性检测**
 
 从已登录的浏览器会话检查 AnyRouter 模型可用性。
@@ -126,9 +132,9 @@ Swagger UI 页面的 URL 编码标题解码，并设置为可读的 `document.ti
 | 推文复制分享 | 已上架 [#482936](https://greasyfork.org/scripts/482936) | 从本仓库 Webhook 同步 |
 | Inoreader 原文链接 | 已上架 [#483381](https://greasyfork.org/scripts/483381) | 从本仓库 Webhook 同步 |
 | 沉浸阅读（for微信读书） | 已上架 [#536846](https://greasyfork.org/scripts/536846) | 从本仓库 Webhook 同步 |
-| Folo 功能扩展 | 待上架 | 有普适价值，等作者手动首发 |
-| 微信读书深色主题修复 | 待上架 | 有普适价值，等作者手动首发 |
-| Swagger 标题解码 | 待上架 | 有普适价值，等作者手动首发 |
+| Folo 功能扩展 | 已上架 [#596364](https://greasyfork.org/scripts/596364) | 从本仓库 Webhook 同步 |
+| 微信读书深色主题修复 | 已上架 [#596365](https://greasyfork.org/scripts/596365) | 从本仓库 Webhook 同步 |
+| Swagger 标题解码 | 已上架 [#596366](https://greasyfork.org/scripts/596366) | 从本仓库 Webhook 同步 |
 | Sumbuddy 深色模式 | 不上架 | 全站匹配，需手动开关 |
 | 红果视频自动下一集 | 不上架 | 个人向，站点小众 |
 | Hermchats 对话批量删除 | 不上架 | 个人向，站点小众 |

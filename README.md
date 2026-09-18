@@ -26,11 +26,15 @@ Forces WeRead's dark theme class on body and darkens the index page cards.
 
 Runs on weread.qq.com/*
 
+[Install](https://greasyfork.org/scripts/596365)
+
 **Folo Extensions**
 
 Personal tweaks for the Folo web app. Currently: fully disables the built-in reader — click or Enter opens the original in a new tab and marks it read; J/K/↑/↓ move the selection.
 
 Runs on app.folo.is
+
+[Install](https://greasyfork.org/scripts/596364) · [Docs](folo-extensions/README.md)
 
 [Docs](folo-extensions/README.md)
 
@@ -82,6 +86,8 @@ Decodes URL-encoded titles for Swagger UI pages and sets a readable `document.ti
 
 Runs on `*://*/*swagger/index.html?urls.primaryName=*`
 
+[Install](https://greasyfork.org/scripts/596366)
+
 **AnyRouter Model Checker**
 
 Checks AnyRouter model availability from a logged-in browser session.
@@ -126,9 +132,9 @@ Runs on hermchats.com
 | Share Tweet Copy | Published [#482936](https://greasyfork.org/scripts/482936) | Webhook sync from this repo |
 | Inoreader Open Link | Published [#483381](https://greasyfork.org/scripts/483381) | Webhook sync from this repo |
 | Immersive Reading (for WeRead) | Published [#536846](https://greasyfork.org/scripts/536846) | Webhook sync from this repo |
-| Folo Extensions | To publish | General-purpose; awaiting first manual publish |
-| WeRead Dark Theme Fix | To publish | General-purpose; awaiting first manual publish |
-| Swagger URL Title Decoder | To publish | General-purpose; awaiting first manual publish |
+| Folo Extensions | Published [#596364](https://greasyfork.org/scripts/596364) | Webhook sync from this repo |
+| WeRead Dark Theme Fix | Published [#596365](https://greasyfork.org/scripts/596365) | Webhook sync from this repo |
+| Swagger URL Title Decoder | Published [#596366](https://greasyfork.org/scripts/596366) | Webhook sync from this repo |
 | Sumbuddy Dark | Not publishing | Matches every site; toggle manually |
 | Hongguoguo Auto Next | Not publishing | Personal use, niche site |
 | Hermchats Dialog Cleaner | Not publishing | Personal use, niche site |
