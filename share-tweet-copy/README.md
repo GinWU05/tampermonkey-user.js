@@ -70,9 +70,31 @@ Even though many users install the Twitter app for their phones, the sharing for
 - Any mobile browser on Android that supports the Tampermonkey extension can be used with `share-tweet-copy`.
 
 **iOS**
-- **Safari**: [App Store](https://apps.apple.com/no/app/safari/id1146562112) with [Userscripts](https://apps.apple.com/cn/app/userscripts/id1463298887).
 
-[A Better Ways to Run Tampermonkey Userscripts on iPhone or iPad](https://www.youtube.com/watch?v=fZrt4ZX-Xtk)
+Recommended: **Safari + [Stay for Safari](https://apps.apple.com/app/stay-for-safari/id1591620171)**.
+
+1. Install Stay from the App Store and enable it in Settings → Safari → Extensions.
+2. Open the [Greasy Fork page](https://greasyfork.org/scripts/482936-share-tweet-copy) in Safari and tap "Install this script" — Stay picks it up.
+3. **Log in to x.com in Safari before you expect the icon to show up.** This is the step people miss.
+
+> **Why you must be logged in.** When Safari is not logged in, x.com serves mobile browsers a lightweight server-rendered preview page instead of the real web app. That page has no `#react-root` and none of the hooks this script watches for (`article[role="article"]`, `[data-testid="User-Name"]`, `[data-testid="tweetText"]`), so the copy icon never appears even though Stay has injected the script correctly. Log in, reload the page, and the icon comes back.
+>
+> **Symptom:** Stay shows the script as enabled on x.com, but no 📋 icon anywhere.
+>
+> **One-line self-check** (iPhone: Settings → Safari → Advanced → Web Inspector; connect to a Mac over USB; Mac Safari → Develop → *your iPhone* → the x.com tab; run in the console):
+>
+> ```js
+> [document.querySelectorAll('.copy-tweet-button').length, !!document.querySelector('#react-root')]
+> ```
+>
+> `[0, false]` means you are on the logged-out preview page — log in. `[0, true]` means the app loaded but the script did not run — check Stay.
+
+Other iOS options, for the record:
+
+- **Userscripts app** ([quoid/userscripts](https://github.com/quoid/userscripts)): not supported at the moment. It only exposes the Promise-based `GM.getValue` and has no synchronous `GM_getValue`, so this script throws a `ReferenceError` on startup. (Inferred from its source, not device-tested.)
+- **Edge for iOS**: extensions are supported since v153, but the only userscript manager tagged for mobile in the Edge Add-ons store is "Stay for Mobile" (same developer as Stay). It is the same runtime, so Safari + Stay is the shorter path.
+
+Runtime notes for maintainers: Stay injects `GM_getValue` / `GM_setValue` / `GM_addStyle` synchronously, but only when they are declared in `@grant` (this script declares the two it uses); its default `@run-at` is `document-end`; it injects as a content script, so x.com's CSP does not block it.
 
 ## Advanced
 
@@ -99,8 +121,10 @@ https://twitter.com/sama/status/1779517913654808676
 - [ ] perf: update cjk regx to use Unicode.
 - [ ] options: show mode => setting "how to display copy button", `always` / `hover`
 - [ ] options: copy mode => `text` / `image`
-- [ ] options: shortcuts => if web is `https://twitter.com/[userid]/status/*`, can use shortcuts to copy with notification.
+- [ ] options: shortcuts => on a tweet detail page (`https://x.com/<user>/status/<id>`), a keyboard shortcut copies the main tweet and shows a notification. An iOS Shortcuts ("Run JavaScript on Web Page", from Safari's share sheet) variant is being explored separately; not shipped.
 - [ ] issues template: feature request, bug.
+- [ ] later: server-side parsing, option A — official oEmbed, `https://publish.x.com/oembed?url=<tweet url>`. No auth, free, and the docs list "Rate limited: No" (community reports put the CDN anti-abuse threshold around 75 req/min per IP). The response carries `access-control-allow-origin: https://x.com`, so a script running on x.com can `fetch` it directly. Downsides: the body keeps `t.co` short links, no media count, text is truncated past 280 characters, deleted/protected tweets return 404. Source: <https://docs.x.com/x-for-websites/oembed-api>
+- [ ] later: server-side parsing, option B — `https://cdn.syndication.twimg.com/tweet-result?id=<id>&token=<token>`. Richer data (expanded links, media, quoted tweet), but undocumented; the `token` algorithm is reverse-engineered and the endpoint could start requiring auth at any time. Backup only, not the main plan.
 
 ## Contributing
 Contributions are welcome! 

@@ -156,6 +156,8 @@ tampermonkey-user.js/
 
 Scripts using GM APIs may behave slightly differently across managers. Test on your setup if you rely on advanced features.
 
+**iOS:** Safari + [Stay](https://apps.apple.com/app/stay-for-safari/id1591620171). For Share Tweet Copy you must be logged in to x.com in Safari, otherwise x.com serves a preview page the script cannot hook into — see [its README](share-tweet-copy/README.md#mobile).
+
 ---
 
 ## Contributing

@@ -156,6 +156,8 @@ tampermonkey-user.js/
 
 使用 GM API 的脚本在不同管理器间可能有细微差异，依赖高级功能时请自行测试。
 
+**iOS：** Safari + [Stay](https://apps.apple.com/app/stay-for-safari/id1591620171)。使用推文复制分享时必须先在 Safari 里登录 x.com，否则 x.com 返回的是脚本无法识别的预览页 —— 详见[该脚本 README](share-tweet-copy/README.md#mobile)。
+
 ---
 
 ## 贡献
