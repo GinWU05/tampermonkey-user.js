@@ -7,8 +7,8 @@
 // @description:zh-CN 通过菜单命令一键删除 Hermchats 上的所有对话。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/hermchats-dialog-cleaner
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/hermchats-dialog-cleaner
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://www.hermchats.com/favicon.ico
 // @match             https://www.hermchats.com/*
 // @grant             GM_xmlhttpRequest

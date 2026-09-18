@@ -7,8 +7,8 @@
 // @description:zh-CN 播放完自动下一节，自动播放。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/chaoxing-mooc-auto-player
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/chaoxing-mooc-auto-player
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://www.google.com/s2/favicons?sz=64&domain=chaoxing.com
 // @match             https://mooc1.chaoxing.com/*
 // @grant             none

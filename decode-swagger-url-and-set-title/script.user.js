@@ -7,8 +7,8 @@
 // @description:zh-CN 解码 Swagger UI 页面 URL 中经过编码的标题，并设置为 document.title。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/decode-swagger-url-and-set-title
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/decode-swagger-url-and-set-title
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://static1.smartbear.co/swagger/media/assets/swagger_fav.png
 // @match             *://*/*swagger/index.html?urls.primaryName=*
 // @grant             none

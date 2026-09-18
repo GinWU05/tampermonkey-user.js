@@ -7,8 +7,8 @@
 // @description:zh-CN Folo 网页版个性化扩展。当前功能：完全禁用内置阅读器——单击或 Enter 在新标签页打开原文并标记已读，J/K/↑/↓ 在列表内移动选中。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/folo-extensions
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/folo-extensions
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://app.folo.is/favicon.ico
 // @match             https://app.folo.is/*
 // @run-at            document-start

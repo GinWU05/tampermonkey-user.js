@@ -31,8 +31,8 @@ Every `<dir>/script.user.js` starts with this block. Field order is part of the 
 // @author            GinWU
 // @contributor       (opt)
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/<dir>
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/<dir>
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              (opt)
 // @match             <at least one>
 // @run-at            (opt)
@@ -101,10 +101,10 @@ Publishing is manual and done by the author. The repository is the source; Greas
 
 **First publish**
 
-1. On GreasyFork, *Post a new script* → *Sync from a URL* with `https://github.com/screw-hand/tampermonkey-user.js/raw/main/<dir>/script.user.js`.
+1. On GreasyFork, *Post a new script* → *Sync from a URL* with `https://github.com/GinWU05/tampermonkey-user.js/raw/main/<dir>/script.user.js`.
 2. Open the script's *Admin* page → *Source code sync* → choose **Webhook** and save.
 3. GreasyFork's webhook URL and secret live on your user page → *Webhook info* (`https://greasyfork.org/users/webhook-info`), not on the script's Admin page. In the GitHub repo, *Settings → Webhooks*, make sure a webhook with that URL and secret exists (one webhook serves every synced script in this repo). Check *Recent Deliveries* if a push does not show up on GreasyFork.
-4. Optionally, under *Additional info*, sync `https://github.com/screw-hand/tampermonkey-user.js/raw/main/<dir>/README.md` as Markdown so the GreasyFork page mirrors the README. Images in a per-script README must use absolute `https://raw.githubusercontent.com/screw-hand/tampermonkey-user.js/main/<dir>/...` URLs; relative paths break on GreasyFork.
+4. Optionally, under *Additional info*, sync `https://github.com/GinWU05/tampermonkey-user.js/raw/main/<dir>/README.md` as Markdown so the GreasyFork page mirrors the README. Images in a per-script README must use absolute `https://raw.githubusercontent.com/GinWU05/tampermonkey-user.js/main/<dir>/...` URLs; relative paths break on GreasyFork.
 5. Back in the repo: add `@downloadURL` / `@updateURL` with the new script id, bump `@version`, add the install link `https://greasyfork.org/scripts/<id>` to the script card in both READMEs, and move the script to *Published* in all three status tables (README.md, README.zh-CN.md, and the table below).
 
 **Subsequent updates**

@@ -7,8 +7,8 @@
 // @description:zh-CN 在已登录的浏览器会话中检测 AnyRouter 各模型的可用性。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/anyrouter-model-checker
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/anyrouter-model-checker
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @match             https://anyrouter.top/*
 // @run-at            document-idle
 // @grant             GM_getValue

@@ -8,7 +8,7 @@ import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const REPO_URL = 'https://github.com/screw-hand/tampermonkey-user.js';
+const REPO_URL = 'https://github.com/GinWU05/tampermonkey-user.js';
 
 const AUTHOR = 'GinWU';
 const NAMESPACE = 'https://screw-hand.com/';

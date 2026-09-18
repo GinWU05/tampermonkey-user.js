@@ -5,7 +5,7 @@ Share Tweet Copy is a Tampermonkey userscript that allows users to copy the text
 
 ## About
 
-The doc source link is [here](https://github.com/screw-hand/tampermonkey-user.js/blob/main/share-tweet-copy/README.md),
+The doc source link is [here](https://github.com/GinWU05/tampermonkey-user.js/blob/main/share-tweet-copy/README.md),
 async with [greasyfork additional info](https://greasyfork.org/scripts/482936#additional-info).
 
 ## Why?
@@ -53,11 +53,11 @@ https://twitter.com/sama/status/1779517913654808676
 ## Screenshots
 |base|hover|
 |---|---|
-|![base](https://raw.githubusercontent.com/screw-hand/tampermonkey-user.js/main/share-tweet-copy/docs/imgs/1-base.png)|![hover](https://raw.githubusercontent.com/screw-hand/tampermonkey-user.js/main/share-tweet-copy/docs/imgs/2-hover.png)|
+|![base](https://raw.githubusercontent.com/GinWU05/tampermonkey-user.js/main/share-tweet-copy/docs/imgs/1-base.png)|![hover](https://raw.githubusercontent.com/GinWU05/tampermonkey-user.js/main/share-tweet-copy/docs/imgs/2-hover.png)|
 
 |click|paste|
 |---|---|
-|![click](https://raw.githubusercontent.com/screw-hand/tampermonkey-user.js/main/share-tweet-copy/docs/imgs/3-click.png)|![paste](https://raw.githubusercontent.com/screw-hand/tampermonkey-user.js/main/share-tweet-copy/docs/imgs/4-paste.png)|
+|![click](https://raw.githubusercontent.com/GinWU05/tampermonkey-user.js/main/share-tweet-copy/docs/imgs/3-click.png)|![paste](https://raw.githubusercontent.com/GinWU05/tampermonkey-user.js/main/share-tweet-copy/docs/imgs/4-paste.png)|
 
 
 ## Mobile
@@ -104,8 +104,8 @@ https://twitter.com/sama/status/1779517913654808676
 
 ## Contributing
 Contributions are welcome! 
-- For bug reports or suggestions, please [open an issue](https://github.com/screw-hand/tampermonkey-user.js/issues/new).
-- For pull request, please make sure to read the [contributing guide](https://github.com/screw-hand/tampermonkey-user.js/blob/main/share-tweet-copy/CONTRIBUTING.md) before that.
+- For bug reports or suggestions, please [open an issue](https://github.com/GinWU05/tampermonkey-user.js/issues/new).
+- For pull request, please make sure to read the [contributing guide](https://github.com/GinWU05/tampermonkey-user.js/blob/main/share-tweet-copy/CONTRIBUTING.md) before that.
 
 ## Thanks
 

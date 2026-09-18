@@ -8,8 +8,8 @@
 // @author            GinWU
 // @contributor       !Sylas;SimonDW;Li_MIxdown;hubzy;xvusrmqj;LossJ;JackieZheng;das2m;harmonyLife;yehuda
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/weread-immersive
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/weread-immersive
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://weread.qq.com/favicon.ico
 // @match             https://weread.qq.com/web/reader/*
 // @grant             GM_addStyle

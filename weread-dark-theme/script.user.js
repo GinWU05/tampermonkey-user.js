@@ -7,8 +7,8 @@
 // @description:zh-CN 强制微信读书 body 使用深色主题 class，并修正首页卡片配色。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/weread-dark-theme
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/weread-dark-theme
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/appleTouchIcon/apple-touch-icon-152x152.png
 // @match             https://weread.qq.com/*
 // @grant             GM_addStyle

@@ -7,8 +7,8 @@
 // @description:zh-CN 一键复制 Twitter/X 推文为整洁、可直接引用的格式，方便分享。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/share-tweet-copy
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/share-tweet-copy
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://abs.twimg.com/favicons/twitter.3.ico
 // @match             https://twitter.com/*
 // @match             https://x.com/*

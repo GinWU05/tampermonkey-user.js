@@ -7,8 +7,8 @@
 // @description:zh-CN 在 Inoreader 网页版打开文章原文链接。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/inoreader-open-link
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/inoreader-open-link
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://www.inoreader.com/favicon.ico?v=8
 // @match             https://www.inoreader.com/*
 // @grant             none

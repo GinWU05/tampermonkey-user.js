@@ -7,8 +7,8 @@
 // @description:zh-CN 红果视频自动下一集并尝试全屏。
 // @author            GinWU
 // @license           MIT
-// @homepageURL       https://github.com/screw-hand/tampermonkey-user.js/tree/main/hongguoguo-auto-next
-// @supportURL        https://github.com/screw-hand/tampermonkey-user.js/issues
+// @homepageURL       https://github.com/GinWU05/tampermonkey-user.js/tree/main/hongguoguo-auto-next
+// @supportURL        https://github.com/GinWU05/tampermonkey-user.js/issues
 // @icon              https://www.hongguoguo.tv/template/Naifei/static/img/favicon.png
 // @match             https://www.hongguoguo.tv/vod/play/id/*/sid/1/nid/*.html
 // @run-at            document-start
