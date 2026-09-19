@@ -15,6 +15,7 @@ This document is the source of truth for how scripts in this repository are name
 - The main script file is always `<dir>/script.user.js`. Do not rename it — the GreasyFork webhook matches on this path.
 - The dev loader, if present, is always `<dir>/dev.user.js`. `_utils/dev.local.js` is the template to copy from.
 - `docs/plans/` holds design notes / development prompts. `_utils/` holds repo tooling.
+- `<dir>/README.md` exists only when the script needs more than `@description` can hold: rationale, known limits, screenshots, setup steps. A single-purpose script whose description already says everything ships without one. Do not add a README just to fill GreasyFork's *Additional info*; the status table below records which scripts have one.
 
 ## Userscript header template
 
@@ -57,7 +58,7 @@ Dev loaders (`<dir>/dev.user.js`) follow a smaller template — see `_utils/dev.
 
 ## Versioning
 
-- Any change to `<dir>/script.user.js` — including header-only changes — must bump `@version`. GreasyFork and userscript managers only pick up updates when the version increases.
+- Any change to `<dir>/script.user.js` — including header-only changes — must bump `@version`. Userscript managers only install an update when the version increases. (GreasyFork's webhook accepts a same-version push and republishes it, but installed copies will not update, so the bump is still required.)
 - Patch (`x.y.Z`) for fixes and header/metadata changes, minor (`x.Y.0`) for new features, major (`X.0.0`) for behavior changes users must re-learn.
 - No changelog file is kept. Describe user-facing features in the script's README instead.
 - A script that once used a date version (e.g. `2025-03-12`) must move to a `YYYY.M.D` semver that still sorts above it (e.g. `2026.9.18`). Managers compare the leading integer of each dot-separated part, so `1.0.0` would be a downgrade and existing installs would never update again.
@@ -104,7 +105,7 @@ Publishing is manual and done by the author. The repository is the source; Greas
 1. On GreasyFork, *Post a new script* → *Sync from a URL* with `https://github.com/GinWU05/tampermonkey-user.js/raw/main/<dir>/script.user.js`.
 2. Open the script's *Admin* page → *Source code sync* → choose **Webhook** and save.
 3. GreasyFork's webhook URL and secret live on your user page → *Webhook info* (`https://greasyfork.org/users/webhook-info`), not on the script's Admin page. In the GitHub repo, *Settings → Webhooks*, make sure a webhook with that URL and secret exists (one webhook serves every synced script in this repo). Check *Recent Deliveries* if a push does not show up on GreasyFork.
-4. Optionally, under *Additional info*, sync `https://github.com/GinWU05/tampermonkey-user.js/raw/main/<dir>/README.md` as Markdown so the GreasyFork page mirrors the README. Images in a per-script README must use absolute `https://raw.githubusercontent.com/GinWU05/tampermonkey-user.js/main/<dir>/...` URLs; relative paths break on GreasyFork.
+4. If the script has a README, under *Additional info* sync `https://github.com/GinWU05/tampermonkey-user.js/raw/main/<dir>/README.md` and select **Markdown** (not HTML) so the GreasyFork page mirrors the README. Relative image paths such as `docs/x.gif` are resolved against the sync URL and work as-is. The additional-info sync uses the same webhook matching as the script, so it also breaks if the repository URL changes — update both fields together.
 5. Back in the repo: add `@downloadURL` / `@updateURL` with the new script id, bump `@version`, add the install link `https://greasyfork.org/scripts/<id>` to the script card in both READMEs, and move the script to *Published* in all three status tables (README.md, README.zh-CN.md, and the table below).
 
 **Subsequent updates**
@@ -117,12 +118,12 @@ Install links always use the locale-free form `https://greasyfork.org/scripts/<i
 
 | Script | Status | Notes |
 |---|---|---|
-| share-tweet-copy | Published [#482936](https://greasyfork.org/scripts/482936) | Webhook sync |
-| inoreader-open-link | Published [#483381](https://greasyfork.org/scripts/483381) | Webhook sync |
-| weread-immersive | Published [#536846](https://greasyfork.org/scripts/536846) | Webhook sync |
-| folo-extensions | Published [#596364](https://greasyfork.org/scripts/596364) | Webhook sync |
-| weread-dark-theme | Published [#596365](https://greasyfork.org/scripts/596365) | Webhook sync |
-| decode-swagger-url-and-set-title | Published [#596366](https://greasyfork.org/scripts/596366) | Webhook sync |
+| share-tweet-copy | Published [#482936](https://greasyfork.org/scripts/482936) | Webhook sync; README → Additional info |
+| inoreader-open-link | Published [#483381](https://greasyfork.org/scripts/483381) | Webhook sync; no README (description suffices) |
+| weread-immersive | Published [#536846](https://greasyfork.org/scripts/536846) | Webhook sync; README → Additional info |
+| folo-extensions | Published [#596364](https://greasyfork.org/scripts/596364) | Webhook sync; README → Additional info |
+| weread-dark-theme | Published [#596365](https://greasyfork.org/scripts/596365) | Webhook sync; no README (description suffices) |
+| decode-swagger-url-and-set-title | Published [#596366](https://greasyfork.org/scripts/596366) | Webhook sync; no README (description suffices) |
 | sumbuddy-dark | Not publishing | Matches `*://*/*` (every site); meant to be toggled manually |
 | hongguoguo-auto-next | Not publishing | Personal use, niche site |
 | hermchats-dialog-cleaner | Not publishing | Personal use, niche site |
