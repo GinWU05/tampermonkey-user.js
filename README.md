@@ -36,8 +36,6 @@ Runs on app.folo.is
 
 [Install](https://greasyfork.org/scripts/596364) · [Docs](folo-extensions/README.md)
 
-[Docs](folo-extensions/README.md)
-
 ---
 
 ### 🔗 Share & Copy

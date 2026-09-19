@@ -36,8 +36,6 @@ Folo 网页版个性化扩展。当前功能：完全禁用内置阅读器——
 
 [安装](https://greasyfork.org/scripts/596364) · [文档](folo-extensions/README.md)
 
-[文档](folo-extensions/README.md)
-
 ---
 
 ### 🔗 分享 & 复制
