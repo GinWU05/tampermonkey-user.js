@@ -2,7 +2,7 @@
 // @name              Share Tweet Copy
 // @name:zh-CN        推文复制分享
 // @namespace         https://screw-hand.com/
-// @version           0.4.7
+// @version           0.4.8
 // @description       Copy tweets on Twitter/X in a clean, quote-ready format for easy sharing.
 // @description:zh-CN 一键复制 Twitter/X 推文为整洁、可直接引用的格式，方便分享。
 // @author            GinWU
@@ -23,7 +23,19 @@
 
   /**
    * Change Log
-   * 
+   *
+   * Version 0.4.8(2026-10-03)
+   *  - Count length by X's official rule (twitter-text v3): a URL counts 23, an emoji sequence is counted as a whole (weight 2), and the same count is used for both checking and cutting.
+   *  - Raise the limit from 280 to 440 (about 220 CJK characters, or 440 Latin characters).
+   *  - Cut at a line break or sentence-ending punctuation first, fall back to a space.
+   *  - Line limit changes from "10 lines, blank lines included" to "15 lines, only non-empty lines".
+   *  - Add the ellipsis only when content is actually missing. Tweets folded by X ("Show more") count as missing too.
+   *  - Fix the extra "…" after long links, the handling of 3+ consecutive newlines, and the failed mark not being cleared.
+   *
+   * Version 0.4.7(2026-09-18)
+   *  - Unify userscript metadata: English @name with @name:zh-CN, add @description:zh-CN, @license, @homepageURL.
+   *  - Point GitHub URLs at GinWU05.
+   *
    * Version 0.4.6(2024-09-19)
    *  - fix dark mode style
    *
@@ -385,6 +397,7 @@
    */
   function handleTweetCopyClick({ e, tweetElement }) {
     e.stopPropagation();
+    e.currentTarget.classList.remove('copy-failed');
 
     try {
       let text = formatTweet({ tweetElement });
@@ -439,103 +452,74 @@
   }
 
   /**
+   * Shortens the tweet text for sharing. The ellipsis is added only when content is missing:
+   * cut off here, or folded by X behind "Show more".
+   *
+   * Weights follow X's counting rule (twitter-text config v3): code points in the light ranges count 1,
+   * everything else (CJK, emoji, ...) counts 2, and a URL counts 23.
+   * https://docs.x.com/fundamentals/counting-characters
+   * https://github.com/twitter/twitter-text/blob/master/config/v3.json
    * @param {string} tweetText
-   * @param {number} count max line breaks
+   * @param {boolean} folded X shows only part of the text, with a "Show more" link.
    * @returns {string} tweetText
    */
-  function limitLineBreaks(tweetText, count) {
-    const lineCount = (tweetText.match(/\n/g) || []).length;
-    if (lineCount > count) {
-      const limitedText = tweetText.split('\n').slice(0, count).join('\n');
-      return limitedText + '...\n';
+  function handleTweetText(tweetText, folded) {
+    const MAX_TWEET_WEIGHT = 440;
+    const MAX_TWEET_LINES = 15;
+    const isLight = cp => cp <= 0x10FF || (cp >= 0x2000 && cp <= 0x200D) || (cp >= 0x2010 && cp <= 0x201F) || (cp >= 0x2032 && cp <= 0x2037);
+    const isWordChar = token => token?.weight === 1 && /^[\p{L}\p{N}]/u.test(token.text);
+
+    let text = tweetText.normalize('NFC');
+    let truncated = false;
+
+    // Only non-empty lines count, so blank lines between paragraphs are kept.
+    const lines = [...text.matchAll(/^.*\S/gm)];
+    if (lines.length > MAX_TWEET_LINES) {
+      text = text.slice(0, lines[MAX_TWEET_LINES].index);
+      truncated = true;
     }
-    return tweetText
-  }
 
-  /**
-   * Calculate the length of the tweet character, and use an ellipsis to represent the overflow content.
-   * @param {string} tweetText 
-   * @returns {string} tweetText
-   */
-  function handleTweetText(tweetText) {
-    /**
-     * Counting characters Rule reference the following link, this is just a simple implementation
-     * Counting characters | Docs | Twitter Developer Platform
-     * https://developer.twitter.com/en/docs/counting-characters
-     */
-    const MAX_TWEET_CHARACTERS = 280;
-    const CharacterConfig = {
-      urls: { pattern: /https?:\/\/[^\s]+/g, charActerLength: 23 },
-      emojis: { pattern: /[\u{1F300}-\u{1F5FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, charActerLength: 2 },
-      cjk: { pattern: /[\u{4E00}-\u{9FFF}\u{3400}-\u{4DBF}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B73F}\u{2B740}-\u{2B81F}\u{2B820}-\u{2CEAF}\u{F900}-\u{FAFF}\u{2F800}-\u{2FA1F}\u{AC00}-\u{D7AF}\u{1100}-\u{11FF}]/gu, charActerLength: 2 },
-      mentions: { pattern: /@\w+/g, charActerLength: 0 }
-    };
-    const MAX_LINE_BREAK = 10;
+    // A URL is a single token, so a cut never lands inside it.
+    const segmenter = new Intl.Segmenter();
+    const tokens = text.split(/(https?:\/\/\S+)/).flatMap((part, i) => i % 2
+      ? [{ text: part, weight: 23 }]
+      : [...segmenter.segment(part)].map(({ segment }) => ({ text: segment, weight: isLight(segment.codePointAt(0)) ? 1 : 2 })));
 
-    let characterCounts = {}
-    Object.keys(CharacterConfig).forEach(key => {
-      characterCounts[key] = 0
-    })
-
-    // Normalize the text
-    tweetText = tweetText.normalize('NFC');
-
-    let characterLength = 0;
-    let tweetIndex = 0;
-    let mask = {};
-
-    while (tweetIndex < tweetText.length) {
-      let matched = false;
-
-      // Check each character pattern
-      for (const [key, config] of Object.entries(CharacterConfig)) {
-        const regex = new RegExp(config.pattern);
-        regex.lastIndex = tweetIndex; // Start matching from current index
-        const match = regex.exec(tweetText);
-
-        if (match && match.index === tweetIndex) { // Match must start at the current index
-          characterCounts[key] += 1;
-          matched = true;
-          const matchLength = match[0].length;
-
-          if (key === 'urls') {
-            // For URLs, add the entire URL's length once
-            characterLength += config.charActerLength;
-            tweetIndex += matchLength - 1; // Move index to the end of the URL
-          } else {
-            // For other patterns, add length per matched character
-            characterLength += matchLength * config.charActerLength;
+    let weight = 0;
+    let index = 0;
+    let tailStart = 0;
+    for (const [i, token] of tokens.entries()) {
+      weight += token.weight;
+      if (weight > MAX_TWEET_WEIGHT) {
+        // Within the last third of the budget, end at a line or sentence end, or at least not inside a word.
+        let end = -1;
+        for (const match of text.slice(0, index + 1).matchAll(/\n|[。！？]|[.!?](?=\s)/g)) {
+          if (match.index >= tailStart && match.index < index) {
+            end = match.index + 1;
           }
-
-          break; // Stop checking other patterns once matched
         }
+        if (end < 0 && isWordChar(tokens[i - 1]) && isWordChar(token)) {
+          const space = text.lastIndexOf(' ', index - 1);
+          if (space >= tailStart) {
+            end = space;
+          }
+        }
+        text = text.slice(0, end < 0 ? index : end);
+        truncated = true;
+        break;
       }
-
-      if (!matched) {
-        // If no special characters matched, count the current character as one
-        characterLength += 1;
+      index += token.text.length;
+      if (weight <= MAX_TWEET_WEIGHT * 2 / 3) {
+        tailStart = index;
       }
-
-      tweetIndex++; // Move to the next character
     }
 
     if (ENV.MODE !== 'PROD') {
-      console.log({
-        characterLength,
-        tweetText_length: tweetText.length,
-        characterCounts
-      });
+      console.log({ weight, truncated, folded });
     }
 
-    // Check if the length exceeds the limit and trim if necessary
-    if (characterLength > MAX_TWEET_CHARACTERS) {
-      tweetText = tweetText.substring(0, MAX_TWEET_CHARACTERS) + '...'; // Truncate and add ellipsis
-    } 
-    else {
-      tweetText = limitLineBreaks(tweetText, MAX_LINE_BREAK)
-    }
-
-    return tweetText;
+    text = text.trimEnd();
+    return truncated || folded ? text + '...' : text;
   }
 
   /**
@@ -558,9 +542,15 @@
       let textNode = document.createTextNode(altText);
       img.parentNode.replaceChild(textNode, img);
     });
-    let tweetText  = handleTweetText(clone.textContent);
-    
-    return tweetText;
+    // X shortens long link text by hiding the rest of the URL and appending a visible "…".
+    clone.querySelectorAll('a span[aria-hidden="true"]').forEach(span => {
+      if (span.textContent === '…') {
+        span.remove();
+      }
+    });
+    const folded = !!tweetTextDOM.nextElementSibling?.matches('[data-testid="tweet-text-show-more-link"]');
+
+    return handleTweetText(clone.textContent, folded);
   }
 
   /**
@@ -616,7 +606,7 @@
       }
       return match;
     });
-    formatted = formatted.replaceAll(/\n\n\n/gi, '\n')
+    formatted = formatted.replace(/\n{3,}/g, '\n\n')
     return formatted;
   }
 
